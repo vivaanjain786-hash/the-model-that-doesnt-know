@@ -1,0 +1,132 @@
+{
+  "known_classes": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer"
+  ],
+  "unknown_classes": [
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "threshold_calibration": {
+    "target_known_acceptance": 0.95,
+    "temperature": 1.0,
+    "msp_threshold": 0.825989842414856,
+    "energy_id_score_threshold": 3.9137747287750244,
+    "calibration_source": "known validation images only"
+  },
+  "known_classification": {
+    "accuracy": 0.9642,
+    "macro_f1": 0.9641236635305097,
+    "classification_report": {
+      "airplane": {
+        "precision": 0.958984375,
+        "recall": 0.982,
+        "f1-score": 0.9703557312252964,
+        "support": 1000.0
+      },
+      "automobile": {
+        "precision": 0.992992992992993,
+        "recall": 0.992,
+        "f1-score": 0.992496248124062,
+        "support": 1000.0
+      },
+      "bird": {
+        "precision": 0.9617768595041323,
+        "recall": 0.931,
+        "f1-score": 0.9461382113821138,
+        "support": 1000.0
+      },
+      "cat": {
+        "precision": 0.9507537688442211,
+        "recall": 0.946,
+        "f1-score": 0.9483709273182958,
+        "support": 1000.0
+      },
+      "deer": {
+        "precision": 0.9566074950690335,
+        "recall": 0.97,
+        "f1-score": 0.9632571996027806,
+        "support": 1000.0
+      },
+      "accuracy": 0.9642,
+      "macro avg": {
+        "precision": 0.964223098282076,
+        "recall": 0.9642,
+        "f1-score": 0.9641236635305097,
+        "support": 5000.0
+      },
+      "weighted avg": {
+        "precision": 0.9642230982820762,
+        "recall": 0.9642,
+        "f1-score": 0.9641236635305097,
+        "support": 5000.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        982,
+        3,
+        5,
+        7,
+        3
+      ],
+      [
+        5,
+        992,
+        2,
+        0,
+        1
+      ],
+      [
+        20,
+        1,
+        931,
+        26,
+        22
+      ],
+      [
+        14,
+        2,
+        20,
+        946,
+        18
+      ],
+      [
+        3,
+        1,
+        10,
+        16,
+        970
+      ]
+    ]
+  },
+  "ood_detection": {
+    "msp": {
+      "auroc_id_vs_ood": 0.80249082,
+      "aupr_id_vs_ood": 0.8131338705475328,
+      "fpr_at_95_tpr_id_detection": 0.7652
+    },
+    "energy": {
+      "auroc_id_vs_ood": 0.7919934799999999,
+      "aupr_id_vs_ood": 0.7998290783568563,
+      "fpr_at_95_tpr_id_detection": 0.7492
+    }
+  },
+  "rejection_behavior": {
+    "msp_known_rejection_rate": 0.0542,
+    "msp_ood_rejection_rate": 0.2632,
+    "energy_known_rejection_rate": 0.0494,
+    "energy_ood_rejection_rate": 0.247
+  },
+  "notes": [
+    "OOD detection is evaluated on held-out CIFAR-10 classes, not arbitrary real-world unknowns.",
+    "Higher MSP and energy_id_score are treated as more in-distribution-like.",
+    "Thresholds use only known validation examples; no OOD validation examples are used."
+  ]
+}
